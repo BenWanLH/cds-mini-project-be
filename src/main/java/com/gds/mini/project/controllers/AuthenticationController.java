@@ -22,7 +22,7 @@ public class AuthenticationController {
   private AuthenticationService authenticationService;
 
   @PostMapping("/login")
-  public LoginResponse login(@RequestBody RegisterUserRequest request, HttpServletResponse response) {
+  public LoginResponse login(@RequestBody RegisterUserRequest request) {
     return authenticationService.loginUser(request.username, request.password);
   }
 

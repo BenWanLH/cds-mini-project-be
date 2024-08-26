@@ -23,9 +23,7 @@ public class Application {
   @Bean
   CommandLineRunner run(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
     return  args -> {
-      System.out.println("including role ...");
       if(roleRepository.findByAuthority("USER").isPresent()) {
-        System.out.println("roles already included ...");
         return;
       }
       Role userRole = roleRepository.save(new Role("USER"));
